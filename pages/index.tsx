@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import Link from "next/link";
 
-const Index = () => (
+const Index = ({ content }) => (
     <div sx={{ height: `calc(100vh - 60px)` }}>
         <div
             sx={{
@@ -12,11 +11,19 @@ const Index = () => (
                 height: "100%",
             }}
         >
-            <h1 sx={{ fontSize: 8, my: 0 }}>
-                This is a really dope note taking app.
-            </h1>
+            <h1 sx={{ fontSize: 8, my: 0 }}>{content.title}</h1>
         </div>
     </div>
 );
 
 export default Index;
+
+export function getStaticProps() {
+    return {
+        props: {
+            content: {
+                title: "This is my really nice app :D",
+            },
+        },
+    };
+}
