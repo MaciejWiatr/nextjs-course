@@ -21,14 +21,14 @@ export async function getServerSideProps({ params, req, res }) {
         `${process.env.API_URL}/api/notes/${params.id}`
     );
 
-    // so much power!
-    if (!response.ok) {
-        res.writeHead(301, {
-            location: "/notes",
-        });
-        res.end();
-        return { props: {} };
-    }
+    // // so much power!
+    // if (!response.ok) {
+    //     res.writeHead(301, {
+    //         location: "/notes",
+    //     });
+    //     res.end();
+    //     return { props: {} };
+    // }
 
     const { data } = await response.json();
 
