@@ -42,7 +42,7 @@ const PageIndex = ({ notes }) => {
 export default PageIndex;
 
 export async function getServerSideProps() {
-    const res = await fetch(`http://localhost:3000/api/notes`);
+    const res = await fetch(`${process.env.API_URL}/api/notes`);
     const { data } = await res.json();
     return {
         props: {
