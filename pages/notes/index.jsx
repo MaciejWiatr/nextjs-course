@@ -7,7 +7,6 @@ const PageIndex = ({ notes }) => {
     return (
         <div sx={{ variant: "containers.page" }}>
             <h1>My Notes</h1>
-
             <div
                 sx={{
                     display: "flex",
